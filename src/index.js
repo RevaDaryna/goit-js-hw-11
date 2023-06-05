@@ -44,11 +44,11 @@ function onSearchForm(e) {
         createCard(data.hits);
         simpleLightbox.refresh();
         alertFound(data);
-        btnAddLoad.style.display = 'block';
 
-          if (data.totalHits > perPage) {
-            btnAddLoad.style.display = 'block';
-            btnAddLoad.classList.remove('hidden');
+        if (data.totalHits > perPage) {
+          btnAddLoad.style.display = 'block';
+          btnAddLoad.addEventListener('click', onLoadMore);
+          btnAddLoad.classList.remove('hidden');
         }
       }
     })
