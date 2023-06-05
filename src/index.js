@@ -24,6 +24,7 @@ btnAddLoad.addEventListener('click', onLoadMore);
 
 function onSearchForm(e) {
   e.preventDefault();
+
   window.scrollTo({ top: 0 });
   page = 1;
   q = e.currentTarget.searchQuery.value.trim();
@@ -43,6 +44,7 @@ function onSearchForm(e) {
         createCard(data.hits);
         simpleLightbox.refresh();
         alertFound(data);
+        btnAddLoad.style.display = 'block';
 
         if (data.totalHits > perPage) {
           btnAddLoad.classList.remove('hidden');
