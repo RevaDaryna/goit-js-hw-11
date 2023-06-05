@@ -46,8 +46,9 @@ function onSearchForm(e) {
         alertFound(data);
         btnAddLoad.style.display = 'block';
 
-        if (data.totalHits > perPage) {
-          btnAddLoad.classList.remove('hidden');
+          if (data.totalHits > perPage) {
+            btnAddLoad.style.display = 'block';
+            btnAddLoad.classList.remove('hidden');
         }
       }
     })
